@@ -8,8 +8,8 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello, World!")
-	fmt.Println(quote.Go())
+	fmt.Println("Hello, World!") // output
+	fmt.Println(quote.Go())      // output
 
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
@@ -17,12 +17,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(message)
+	fmt.Println(message) // output
 
 	// Let's try again, this time failing to pass a string to greetings.Hello()
-	secondMessage, err := greetings.Hello("")
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(secondMessage)
+	//secondMessage, err := greetings.Hello("")
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//fmt.Println(secondMessage) // output
+
+	names := []string{"Ed", "Sam", "Sally"}
+	messages, err := greetings.Hellos(names)
+	fmt.Println(messages) // output
 }
